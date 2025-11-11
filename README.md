@@ -40,7 +40,9 @@
 Внутри класса поддерживается одна «текущая» коробка (currentBox), которая может содержать объект любого типа. При выполнении задания создаётся отдельная временная коробка (taskBox), не влияющая на основную.
 
 <img width="431" height="493" alt="image" src="https://github.com/user-attachments/assets/beba4039-7bbb-4aa2-9e5d-e45638d5e5d8" /> 
+
 <img width="621" height="397" alt="image" src="https://github.com/user-attachments/assets/645dd82e-dede-4ba4-ba84-c4ad1b328938" />
+
 <img width="432" height="482" alt="image" src="https://github.com/user-attachments/assets/3cf3ea92-975c-4c1a-91ca-85cf4eac3ec8" /> 
 
 <img width="370" height="341" alt="image" src="https://github.com/user-attachments/assets/d627f9ce-328a-468b-a37a-76c034eeb0e6" />
@@ -78,6 +80,10 @@ processNumberStorage — демонстрирует работу с числов
 processStringStorage — демонстрирует работу со строковым хранилищем.
 
 executeTask() — выполняет учебное задание по условиям задачи (4 примера работы хранилища)
+
+<img width="604" height="741" alt="image" src="https://github.com/user-attachments/assets/976075e8-3d8c-457a-8d76-dc82b934356d" />
+
+<img width="486" height="351" alt="image" src="https://github.com/user-attachments/assets/35eb2272-196c-43bf-b951-a510345d5340" />
 
 ## Задание 2.2. Поиск максимума. 
 Программа предназначена для работы с обобщённой сущностью «Коробка», которая может хранить один объект произвольного типа данных. Цель программы — продемонстрировать работу обобщённых классов (generics), динамическое хранение объектов разных типов, их извлечение, просмотр состояния и выполнение операций над набором коробок (например, поиск максимального числа).

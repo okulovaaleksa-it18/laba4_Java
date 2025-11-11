@@ -20,11 +20,6 @@
 Методы isEmpty() и isFull() — проверяют состояние коробки (пустая или заполнена).
 
 Метод toString() — возвращает строковое описание состояния коробки, показывая содержимое в читаемом виде.
-<img width="431" height="493" alt="image" src="https://github.com/user-attachments/assets/beba4039-7bbb-4aa2-9e5d-e45638d5e5d8" /> 
-<img width="621" height="397" alt="image" src="https://github.com/user-attachments/assets/645dd82e-dede-4ba4-ba84-c4ad1b328938" />
-<img width="432" height="482" alt="image" src="https://github.com/user-attachments/assets/3cf3ea92-975c-4c1a-91ca-85cf4eac3ec8" /> 
-
-<img width="370" height="341" alt="image" src="https://github.com/user-attachments/assets/d627f9ce-328a-468b-a37a-76c034eeb0e6" />
 
 
 **Класс BoxDemo выполняет роль интерфейса взаимодействия с пользователем и демонстрации работы с коробками различных типов.**
@@ -43,6 +38,12 @@
 Выйти из программы.
 
 Внутри класса поддерживается одна «текущая» коробка (currentBox), которая может содержать объект любого типа. При выполнении задания создаётся отдельная временная коробка (taskBox), не влияющая на основную.
+
+<img width="431" height="493" alt="image" src="https://github.com/user-attachments/assets/beba4039-7bbb-4aa2-9e5d-e45638d5e5d8" /> 
+<img width="621" height="397" alt="image" src="https://github.com/user-attachments/assets/645dd82e-dede-4ba4-ba84-c4ad1b328938" />
+<img width="432" height="482" alt="image" src="https://github.com/user-attachments/assets/3cf3ea92-975c-4c1a-91ca-85cf4eac3ec8" /> 
+
+<img width="370" height="341" alt="image" src="https://github.com/user-attachments/assets/d627f9ce-328a-468b-a37a-76c034eeb0e6" />
 
 ## Задание 1.2. Без null.
 Программа предназначена для работы с обобщённой сущностью «Хранилище» (Storage), которая может содержать один объект произвольного типа данных.

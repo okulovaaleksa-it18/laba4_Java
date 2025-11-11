@@ -1,0 +1,128 @@
+import java.util.Scanner;
+
+//Хранилище
+public class StorageApp {
+
+    static Scanner scanner = new Scanner(System.in);
+
+    //Обобщённый неизменяемый класс Хранилища
+    public static final class Storage<T> {
+        private final T value;
+
+        //Конструктор со значением для хранилища
+        public Storage(T value) {
+            this.value = value;
+        }
+
+        //возвращает альтернативу если null
+        public T getOrElse(T alternative) {
+            return value != null ? value : alternative;
+        }
+
+        @Override
+        public String toString() {
+            return value != null ? "Хранилище[" + value + "]" : "Хранилище[null]";
+        }
+    }
+
+    public class StorageDemo {
+
+        static Scanner scanner = new Scanner(System.in);
+        static check check = new check();
+
+        //Метод для обработки числового хранилища
+        public static void processNumberStorage(Storage<Integer> storage, int alternative) {
+            int value = storage.getOrElse(alternative);
+            System.out.println(storage + " → результат: " + value);
+        }
+
+        // Метод для обработки строкового хранилища
+        public static void processStringStorage(Storage<String> storage, String alternative) {
+            String value = storage.getOrElse(alternative);
+            System.out.println(storage + " → результат: " + value);
+        }
+
+        public static void executeTask() {
+            System.out.println("\n=== ВЫПОЛНЕНИЕ ЗАДАНИЯ ===");
+
+            Storage<Integer> numNull = new Storage<>(null);
+            processNumberStorage(numNull, 0);
+
+            Storage<Integer> num99 = new Storage<>(99);
+            processNumberStorage(num99, -1);
+
+
+            Storage<String> strNull = new Storage<>(null);
+            processStringStorage(strNull, "default");
+
+            Storage<String> strHello = new Storage<>("hello");
+            processStringStorage(strHello, "hello world");
+
+        }
+
+        public static void showMenu() {
+            System.out.println("\n=== МЕНЮ РАБОТЫ С ХРАНИЛИЩЕМ ===");
+            System.out.println("1. Создать Хранилище чисел (с вводом значения)");
+            System.out.println("2. Создать Хранилище строк (с вводом значения)");
+            System.out.println("3. Выполнить задание по примеру");
+            System.out.println("4. Выход");
+            System.out.print("Выберите действие (1-4): ");
+        }
+
+        public static void run() {
+            boolean running = true;
+
+            while (running) {
+                showMenu();
+                String choice = scanner.nextLine().trim();
+
+                try {
+                    switch (choice) {
+                        case "1":
+                            System.out.print("Введите целое число (или оставьте пустым для null): ");
+                            String numInput = scanner.nextLine().trim();
+                            Integer numValue = null;
+                            if (!numInput.isEmpty()) {
+                                try {
+                                    numValue = check.inputNum2(numInput);
+                                } catch (NumberFormatException e) {
+                                    System.out.println(e.getMessage());
+                                    continue;
+                                }
+                            }
+                            Storage<Integer> numStorage = new Storage<>(numValue);
+                            int altNum = (numValue == null) ? 0 : -1;
+                            processNumberStorage(numStorage, altNum);
+                            break;
+
+                        case "2":
+                            System.out.print("Введите строку (или оставьте пустым для null): ");
+                            String strInput = scanner.nextLine().trim();
+                            String strValue = strInput.isEmpty() ? null : strInput;
+                            Storage<String> strStorage = new Storage<>(strValue);
+                            String altStr = (strValue == null) ? "default" : "hello world";
+                            processStringStorage(strStorage, altStr);
+                            break;
+
+                        case "3":
+                            executeTask();
+                            break;
+
+                        case "4":
+                            running = false;
+                            System.out.println("Выход из программы");
+                            break;
+
+                        default:
+                            System.out.println("Неверный выбор. Введите число от 1 до 4.");
+                    }
+                } catch (Exception e) {
+                    System.out.println("Ошибка: " + e.getMessage());
+                }
+            }
+
+            scanner.close();
+        }
+    }
+
+}

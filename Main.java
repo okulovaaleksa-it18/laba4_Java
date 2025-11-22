@@ -23,24 +23,31 @@ public class Main {
         switch (choice) {
             case(1): {
                 Box.BoxDemo.run();
+                break;
             }
             case(2): {
                 StorageApp.StorageDemo.run();
+                break;
             }
             case(3): {
                 Box2.BoxDemo.run();
+                break;
             }
             case(4): {
                 GenericFunction.demo();
+                break;
             }
             case(5): {
                 GenericFilter.demo();
+                break;
             }
             case(6): {
                 GenericReducer.demo();
+                break;
             }
             case(7): {
                 GenericCollector.demo();
+                break;
             }
         }
     }
